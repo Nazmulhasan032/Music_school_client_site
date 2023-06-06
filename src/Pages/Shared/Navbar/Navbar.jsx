@@ -9,7 +9,7 @@ const Navbar = () => {
                     <div className='w-[50px]'>
                         <img src={logo} alt="" />
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">Nazmul Music School</a>
+                    <a className="btn btn-ghost normal-case text-xl">Nazmul Music Academy</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
