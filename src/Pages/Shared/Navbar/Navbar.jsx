@@ -1,11 +1,15 @@
-import React from 'react';
+
+import logo from '../../../assets/logo.png';
 
 const Navbar = () => {
     return (
         <div>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <div className='w-[50px]'>
+                        <img src={logo} alt="" />
+                    </div>
+                    <a className="btn btn-ghost normal-case text-xl">Nazmul Music School</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
