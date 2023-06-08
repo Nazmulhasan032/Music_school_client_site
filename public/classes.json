@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Guitar Basics",
+        "image": "https://i.ibb.co/stYpCyK/20-SM242739-1.jpg",
+        "description": "Learn the fundamentals of playing the guitar, including chords, strumming patterns, and basic music theory."
+    },
+    {
+        "id": 2,
+        "name": "Piano for Beginners",
+        "image": "https://i.ibb.co/c31pkDM/music-gc5b2a51f4-640.jpg",
+        "description": "Discover the world of piano playing and gain foundational skills in reading sheet music, hand placement, and finger exercises."
+    },
+    {
+        "id": 3,
+        "name": "Drumming Essentials",
+        "image": "https://i.ibb.co/yYcsSg3/20-BK677785.jpg",
+        "description": "Master the art of drumming with this class that covers drum beats, fills, rudiments, and coordination techniques."
+    },
+    {
+        "id": 4,
+        "name": "Vocal Training",
+        "image": "https://i.ibb.co/YjtHKHy/Screenshot-1.png",
+        "description": "Develop your singing abilities through vocal exercises, breathing techniques, pitch control, and performance tips."
+    },
+    {
+        "id": 5,
+        "name": "Tabla",
+        "image": "https://i.ibb.co/0yhChmP/class1.jpg",
+        "description": "Tabla is the most famous percussion instrument of North India. It is most commonly used in North Indian classical music, but its versatility in all musical styles has enabled it to become the most popular percussion instrument in all of School."
+    },
+    {
+        "id": 6,
+        "name": "Sitar",
+        "image": "https://i.ibb.co/rv2YKVh/10-SM146760.jpg",
+        "description": "Unlock your creativity and learn the art of crafting compelling songs, from lyrics and melodies to song structure and arrangement."
+    }
+]
