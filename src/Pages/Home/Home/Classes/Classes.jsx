@@ -1,12 +1,18 @@
 import { useEffect, useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const Classes = () => {
 
     const [classes, setClasses] = useState([]);
+    // const[loading, setLoading]= useLoaderData(true);
     useEffect( ()=>{
-        fetch('classes.json')
+        fetch('http://localhost:5000/classes')
         .then(res => res.json())
-        .then(data => setClasses(data))
+        .then(data => {
+            setClasses(data);
+            // setLoading(false);
+        })
+
     } ,[])
 
 
