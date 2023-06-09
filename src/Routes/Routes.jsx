@@ -13,6 +13,7 @@ import Classes from "../Pages/Home/Home/Classes/Classes";
 import Instructors from "../Pages/Instructor/Instructors";
 import Dashboard from "../Layout/Dashboard";
 import Profile from "../Pages/DashBoard/Profile/Profile";
+import AllUsers from "../Pages/DashBoard/Users/AllUsers";
 
   export const router = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ import Profile from "../Pages/DashBoard/Profile/Profile";
         {
           path: 'profile',
           element: <Profile></Profile>,
+        },
+        {
+          path: 'allusers',
+          element: <AllUsers></AllUsers>,
         },
       ]
     }
