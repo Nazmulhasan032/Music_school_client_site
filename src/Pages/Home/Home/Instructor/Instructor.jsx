@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FaTelegramPlane, FaTwitter, FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Instructor = () => {
 
@@ -40,6 +41,9 @@ const Instructor = () => {
                 </div>)
                 }
                 {/* card end */}
+            </div>
+            <div className="flex justify-center items-center">
+                <Link to='/instructor'><button className='btn btn-primary'>Show More</button></Link>
             </div>
         </>
     );

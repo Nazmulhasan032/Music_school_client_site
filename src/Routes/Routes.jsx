@@ -4,9 +4,15 @@ import {
 import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import ErrorPage from "../Layout/ErrorPage/Errorpage";
-import Instructor from "../Pages/Instructor/Instructor";
+// import Instructor from "../Pages/Instructor/Instructors";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
+import Classes from "../Pages/Home/Home/Classes/Classes";
+// import PrivateRoute from "./PrivateRoute";
+// import DashBoard from "../Pages/DashBoard/Profile";
+import Instructors from "../Pages/Instructor/Instructors";
+import Dashboard from "../Layout/Dashboard";
+import Profile from "../Pages/DashBoard/Profile/Profile";
 
   export const router = createBrowserRouter([
     {
@@ -20,8 +26,16 @@ import SignUp from "../Pages/SignUp/SignUp";
         },
         {
           path: '/instructor',
-          element: <Instructor></Instructor>,
+          element: <Instructors></Instructors>,
         },
+        {
+          path: '/classes',
+          element: <Classes></Classes>,
+        },
+        // {
+        //   path: '/dashboard',
+        //   element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
+        // },
         {
           path:'/login',
           element:<Login></Login>,
@@ -32,4 +46,14 @@ import SignUp from "../Pages/SignUp/SignUp";
         },
       ]
     },
+    {
+      path: 'dashboard',
+      element: <Dashboard></Dashboard>,
+      children: [
+        {
+          path: 'profile',
+          element: <Profile></Profile>,
+        },
+      ]
+    }
   ]);

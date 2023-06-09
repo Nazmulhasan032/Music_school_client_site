@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2'
 // import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 import { AuthContext } from '../../Provider/AuthProvider';
+import SocialLogin from '../../Component/SocialLogin/SocialLogin';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -53,13 +54,13 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name="email" placeholder="email" className="input input-bordered" />
+                                <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name="password" placeholder="password" className="input input-bordered" />
+                                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
@@ -70,7 +71,8 @@ const Login = () => {
                             </div>
                         </form>
                         <p><small>New Here? <Link to="/signup">Create an account</Link> </small></p>
-                        {/* <SocialLogin></SocialLogin> */}
+                     
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>

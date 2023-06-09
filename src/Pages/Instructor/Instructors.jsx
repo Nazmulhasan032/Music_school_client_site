@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-const Instructor = () => {
+const Instructors = () => {
     return (
         <div>
             <Helmet>
@@ -11,4 +11,4 @@ const Instructor = () => {
     );
 };
 
-export default Instructor;
+export default Instructors;
