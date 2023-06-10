@@ -1,3 +1,4 @@
+
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
@@ -70,7 +71,7 @@ const Login = () => {
                                 <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
                         </form>
-                        <p><small>New Here? <Link to="/signup">Create an account</Link> </small></p>
+                        <p><small>New Here?</small> <Link to="/signup"><b>Create an account</b></Link> </p>
                      
                         <SocialLogin></SocialLogin>
                     </div>

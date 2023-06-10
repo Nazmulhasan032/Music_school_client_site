@@ -3,36 +3,42 @@
         "id": 1,
         "name": "Sarah Johnson",
         "image": "https://i.ibb.co/ZH5yV3v/instructor5.png",
-        "profession": "Guitar Instructor"
+        "profession": "Guitar Instructor",
+        "email": "sarah@gmail.com"
       },
       {
         "id": 2,
         "name": "Michael Rodriguez",
         "image": "https://i.ibb.co/Hpq1F5g/instructor3.png",
-        "profession": "Piano Teacher"
+        "profession": "Piano Teacher",
+        "email": "Michael@gmail.com"
       },
       {
         "id": 3,
         "name": "Emily Thompson",
         "image": "https://i.ibb.co/xM6dxqf/instructor4.png",
-        "profession": "Drumming Coach"
+        "profession": "Drumming Coach",
+        "email": "Emily@gmail.com"
       },
       {
         "id": 4,
         "name": "Alexandra Davis",
         "image": "https://i.ibb.co/86vB0sP/instructor6.png",
-        "profession": "Vocal Coach"
+        "profession": "Vocal Coach",
+        "email": "Alexandra@gmail.com"
       },
       {
         "id": 5,
         "name": "Daniel Wilson",
         "image": "https://i.ibb.co/tYYqtxm/instructor2.png",
-        "profession": "Music Producer"
+        "profession": "Music Producer",
+        "email": "Daniel@gmail.com"
       },
       {
         "id": 6,
         "name": "Julia Martinez",
         "image": "https://i.ibb.co/Y0XCHqM/instructor1.png",
-        "profession": "Songwriting Instructor"
+        "profession": "Songwriting Instructor",
+        "email": "Julia@gmail.com"
       }
 ]

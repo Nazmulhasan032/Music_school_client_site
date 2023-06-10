@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>Nazmul Music Academy | Home</title>
+                <title>Academy | Home</title>
             </Helmet>
             <Slider></Slider>
             <Classes></Classes>
