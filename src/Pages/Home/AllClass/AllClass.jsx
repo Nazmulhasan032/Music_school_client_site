@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../../Provider/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
+import useEnrollStudent from "../../../hooks/useEnrollStudent";
 
 
 const AllClass = () => {
@@ -9,6 +10,7 @@ const AllClass = () => {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
+    const[, refetch] = useEnrollStudent();
 
     const [allClass, setClass] = useState([]);
     // const[loading, setLoading]= useLoaderData(true);
@@ -22,11 +24,9 @@ const AllClass = () => {
 
     }, [])
 
-    
-
-
     const handleEnrollStudent = (item) => {
         const {id, image, name, price, available_seat, teacher} = item;
+        
         console.log(item);
         if (user && user.email) {
             const enrollStudent = {classId: id,image, name, price, available_seat, teacher, email: user.email}
@@ -41,6 +41,7 @@ const AllClass = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
+                        refetch();
                         alert("You have enroll successfully");
                     }
                 })
