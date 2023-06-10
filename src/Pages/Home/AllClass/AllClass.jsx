@@ -1,9 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 const AllClass = () => {
 
+    const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const [allClass, setClass] = useState([]);
     // const[loading, setLoading]= useLoaderData(true);
@@ -17,6 +22,33 @@ const AllClass = () => {
 
     }, [])
 
+    const {id, image, name, price, available_seat, teacher} = allClass;
+
+
+    const handleEnrollStudent = (item) => {
+        console.log(item);
+        if (user && user.email) {
+            const enrollStudent = {id,image, name, price, available_seat, teacher, email: user.email}
+            fetch('http://localhost:5000/enroll',{
+                method : "POST",
+                headers: {
+                    "content-type" : "application/json"
+                },
+                body : JSON.stringify(enrollStudent)
+
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        alert("You have enroll successfully");
+                    }
+                })
+        }
+        else {
+            navigate('/login', { state: { from: location } });
+        }
+
+    }
 
 
 
@@ -40,10 +72,10 @@ const AllClass = () => {
                             <p>Instructor: {item.teacher}</p>
                             <p>Available Seat: {item.available_seat}</p>
                             <p>Price: ${item.price}</p>
-                            <button className="btn btn-primary">Enroll</button>
+                            <button onClick={() => handleEnrollStudent(item)} className="btn btn-primary">Enroll</button>
 
-                            
-                                 {/* if(item.available_seat === 0){
+
+                            {/* if(item.available_seat === 0){
 
                                     <button disabled className="btn btn-primary">Enroll</button>
                                     }
@@ -52,9 +84,9 @@ const AllClass = () => {
                                     <button className="btn btn-primary">Enroll</button>
                                 } */}
 
-                            
 
-                           
+
+
                         </div>
                     </div>)
                 }
