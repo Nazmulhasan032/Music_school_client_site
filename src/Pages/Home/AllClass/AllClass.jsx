@@ -22,13 +22,14 @@ const AllClass = () => {
 
     }, [])
 
-    const {id, image, name, price, available_seat, teacher} = allClass;
+    
 
 
     const handleEnrollStudent = (item) => {
+        const {id, image, name, price, available_seat, teacher} = item;
         console.log(item);
         if (user && user.email) {
-            const enrollStudent = {id,image, name, price, available_seat, teacher, email: user.email}
+            const enrollStudent = {classId: id,image, name, price, available_seat, teacher, email: user.email}
             fetch('http://localhost:5000/enroll',{
                 method : "POST",
                 headers: {
