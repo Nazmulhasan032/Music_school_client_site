@@ -34,10 +34,6 @@ import AllClass from "../Pages/Home/AllClass/AllClass";
           path: '/classes',
           element: <AllClass></AllClass>,
         },
-        // {
-        //   path: '/dashboard',
-        //   element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
-        // },
         {
           path:'/login',
           element:<Login></Login>,

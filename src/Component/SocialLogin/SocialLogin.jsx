@@ -13,6 +13,7 @@ const SocialLogin = () => {
     const from = location.state?.from?.pathname || "/";
 
     const handleGoogleSignIn = () => {
+
         googleSignIn()
             .then(result => {
                 const loggedInUser = result.user;
@@ -32,13 +33,13 @@ const SocialLogin = () => {
             })
     }
 
+
+
     return (
         <div>
-            <div className="divider"></div>
+            <div className="divider">OR</div>
             <div className="w-full text-center my-4">
-                <button onClick={handleGoogleSignIn} className="btn btn-circle btn-outline">
-                    <FaGoogle></FaGoogle>
-                </button>
+                <button onClick={handleGoogleSignIn} className="btn btn-outline w-full"><FaGoogle></FaGoogle>Google</button>
             </div>
         </div>
     );

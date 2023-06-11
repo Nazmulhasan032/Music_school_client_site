@@ -60,11 +60,12 @@ const Profile = () => {
                     <title>Academy | My enroll</title>
                 </Helmet>
                 <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
-                    <h3 className="text-3xl">Total Items: {enroll.length}</h3>
+                    <h3 className="text-3xl">Selected Classes</h3>
+                    {/* <h3 className="text-3xl">Total Items: {enroll.length}</h3>
                     <h3 className="text-3xl">Total Price: ${total}</h3>
                     <Link to="/dashboard/payment">
                         <button className="btn btn-warning btn-sm">PAY</button>
-                    </Link>
+                    </Link> */}
                 </div>
                 <div className="overflow-x-auto w-full">
                     <table className="table w-full">
@@ -72,10 +73,11 @@ const Profile = () => {
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Food</th>
-                                <th>Item Name</th>
+                                <th>Image</th>
+                                <th>Class Name</th>
                                 <th>Price</th>
                                 <th>Action</th>
+                                <th>Buy</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -96,10 +98,16 @@ const Profile = () => {
                                     <td>
                                         {item.name}
                                     </td>
-                                    <td className="text-end">${item.price}</td>
+                                    <td>${item.price}</td>
                                     <td>
-                                        <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
+                                        <button onClick={() => handleDelete(item)} className="btn btn-danger btn-sm bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
                                         {/* <button className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button> */}
+                                    </td>
+                                    <td>
+                                        <Link to="/dashboard/payment">
+                                            <button className="btn btn-warning btn-sm">PAY</button>
+                                        </Link>
+
                                     </td>
                                 </tr>)
                             }

@@ -1,9 +1,3 @@
-// import { useContext } from "react";
-// import { Helmet } from "react-helmet-async";
-// import { AuthContext } from "../../providers/AuthProvider";
-// import { Link, useNavigate } from "react-router-dom";
-// import Swal from 'sweetalert2'
-// import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
@@ -69,7 +63,7 @@ const SignUp = () => {
                     
                     <div className="card w-full shadow-2xl bg-base-100 p-16">
                         <h1 className="text-5xl font-bold text-center">Sign up</h1>
-                        <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+                        <form onSubmit={handleSubmit(onSubmit)} className="card-body w-full">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
