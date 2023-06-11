@@ -86,9 +86,6 @@ const AllClass = () => {
                                     <button className="btn btn-primary">Enroll</button>
                                 } */}
 
-
-
-
                         </div>
                     </div>)
                 }
