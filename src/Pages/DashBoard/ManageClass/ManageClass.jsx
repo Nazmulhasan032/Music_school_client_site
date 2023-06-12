@@ -1,19 +1,50 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
 import { FaTrashAlt } from "react-icons/fa";
+import useAxiosSecure from '../../../hooks/useAxiosSecure'
+import Swal from "sweetalert2";
 
 
 const ManageClass = () => {
 
-    const [allClass, setClass] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/allclass')
-            .then(res => res.json())
-            .then(data => {
-                setClass(data);
-            })
+    const [axiosSecure] = useAxiosSecure();
+    const {data: allClass=[], refetch} = useQuery({
+        queryKey: ['allclass'],
+        queryFn: async()=>{
+            const res = await fetch('http://localhost:5000/allclass')
+            return res.json();
+        }
+    });
 
-    }, [])
+
+    const handleDelete = item => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                axiosSecure.delete(`/allclass/${item._id}`)
+                    .then(res => {
+                        console.log('deleted res', res.data);
+                        if (res.data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+
+            }
+        })
+    }
 
 
 
@@ -52,7 +83,7 @@ const ManageClass = () => {
                                             <option>Denied</option>
                                         </select>
                                     }</td>
-                                    <td><button className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
+                                    <td><button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
 
                                 </tr>)
                             }

@@ -19,6 +19,8 @@ import AddClass from "../Pages/DashBoard/AddClass/AddClass";
 import ManageClass from "../Pages/DashBoard/ManageClass/ManageClass";
 import ManageInstructor from "../Layout/ManageInstructor/ManageInstructor";
 import Payment from "../Pages/DashBoard/Payment/Payment";
+import StudentPaymentHistory from "../Pages/DashBoard/Profile/StudentPaymentHistory";
+import StudentEnrollClass from "../Pages/DashBoard/Profile/StudentEnrollClass";
 
   export const router = createBrowserRouter([
     {
@@ -59,6 +61,14 @@ import Payment from "../Pages/DashBoard/Payment/Payment";
         {
           path: 'payment',
           element: <Payment></Payment>,
+        },
+        {
+          path: 'history',
+          element: <StudentPaymentHistory></StudentPaymentHistory>,
+        },
+        {
+          path: 'enrollClass',
+          element: <StudentEnrollClass></StudentEnrollClass>,
         },
         {
           path: 'allusers',

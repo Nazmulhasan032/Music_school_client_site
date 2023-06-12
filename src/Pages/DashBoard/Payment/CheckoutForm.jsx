@@ -5,9 +5,11 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 // import useAuth from "../../../hooks/useAuth";
 import './CheckoutForm.css'
 import { AuthContext } from "../../../Provider/AuthProvider";
+import useEnrollStudent from "../../../hooks/useEnrollStudent";
 
 
-const CheckoutForm = ({ cart, price }) => {
+const CheckoutForm = ({ price }) => {
+    const [enroll] = useEnrollStudent();
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useContext(AuthContext);
@@ -78,24 +80,24 @@ const CheckoutForm = ({ cart, price }) => {
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id);
 
-            // const payment = {
-            //     email: user?.email,
-            //     transactionId: paymentIntent.id,
-            //     price,
-            //     date: new Date(),
-            //     quantity: cart.length,
-            //     cartItems: cart.map(item => item._id),
-            //     menuItems: cart.map(item => item.menuItemId),
-            //     status: 'service pending',
-            //     itemNames: cart.map(item => item.name)
-            // }
-            // axiosSecure.post('/payments', payment)
-            //     .then(res => {
-            //         console.log(res.data);
-            //         if (res.data.result.insertedId) {
-            //             // display confirm
-            //         }
-            //     })
+            const payment = {
+                email: user?.email,
+                transactionId: paymentIntent.id,
+                price,
+                date: new Date(),
+                quantity: enroll.length,
+                cartItems: enroll.map(item => item._id),
+                menuItems: enroll.map(item => item.menuItemId),
+                status: 'service pending',
+                itemNames: enroll.map(item => item.name)
+            }
+            axiosSecure.post('/payments', payment)
+                .then(res => {
+                    console.log(res.data);
+                    if (res.data.result.insertedId) {
+                        // display confirm
+                    }
+                })
         }
 
 

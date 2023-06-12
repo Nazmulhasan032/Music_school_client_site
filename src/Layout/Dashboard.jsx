@@ -2,17 +2,20 @@
 import { FaCalendarAlt, FaHome, FaUsers, FaWallet } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
+import { Helmet } from "react-helmet-async";
 
 
 const Dashboard = () => {
 
-   
+
     const [isAdmin] = useAdmin();
 
 
 
     return (
-        <>
+        <><Helmet>
+            <title>Academy | Dashboard</title>
+        </Helmet>
 
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
