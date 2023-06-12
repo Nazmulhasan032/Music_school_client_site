@@ -9,7 +9,7 @@ const ManageInstructor = () => {
     const [teacher, setTeacher] = useState([]);
     // const[loading, setLoading]= useLoading(true);
     useEffect(() => {
-        fetch('http://localhost:5000/allinstructor')
+        fetch('https://school-server-site-nazmulhasan032.vercel.app/allinstructor')
             .then(res => res.json())
             .then(data => {
                 setTeacher(data);

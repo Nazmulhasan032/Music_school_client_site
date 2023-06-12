@@ -15,7 +15,7 @@ const AllClass = () => {
     const [allClass, setClass] = useState([]);
     // const[loading, setLoading]= useLoaderData(true);
     useEffect(() => {
-        fetch('http://localhost:5000/allclass')
+        fetch('https://school-server-site-nazmulhasan032.vercel.app/allclass')
             .then(res => res.json())
             .then(data => {
                 setClass(data);
@@ -30,7 +30,7 @@ const AllClass = () => {
         console.log(item);
         if (user && user.email) {
             const enrollStudent = {classId: id,image, name, price, available_seat, teacher, email: user.email}
-            fetch('http://localhost:5000/enroll',{
+            fetch('https://school-server-site-nazmulhasan032.vercel.app/enroll',{
                 method : "POST",
                 headers: {
                     "content-type" : "application/json"

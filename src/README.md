@@ -5,4 +5,4 @@
 5.In my website people can enroll to learn musical course and i also added admin panel in this web site.
 
 
-server live site link : 
+server live site link : https://school-server-site-nazmulhasan032.vercel.app/

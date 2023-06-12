@@ -11,7 +11,7 @@ const ManageClass = () => {
     const {data: allClass=[], refetch} = useQuery({
         queryKey: ['allclass'],
         queryFn: async()=>{
-            const res = await fetch('http://localhost:5000/allclass')
+            const res = await fetch('https://school-server-site-nazmulhasan032.vercel.app/allclass')
             return res.json();
         }
     });

@@ -5,7 +5,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 
 const axiosSecure = axios.create({
-  baseURL: 'http://localhost:5000', 
+  baseURL: 'https://school-server-site-nazmulhasan032.vercel.app', 
 });
 
 const useAxiosSecure = () => {
