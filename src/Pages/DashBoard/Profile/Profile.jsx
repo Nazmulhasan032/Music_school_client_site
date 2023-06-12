@@ -8,8 +8,6 @@ import Swal from 'sweetalert2';
 const Profile = () => {
 
     const [enroll, refetch] = useEnrollStudent();
-    // const total = enroll.reduce((sum, items) => items.price + sum,0);
-    const total = enroll.reduce((sum, item) => item.price + sum, 0);
 
 
     const handleDelete = item => {
@@ -46,21 +44,13 @@ const Profile = () => {
 
     return (
         <div>
-
-            {/* <Helmet>
-                <title>Academy | Profile</title>
-            </Helmet>
-            <h2>this is my profile</h2>
-            <h3 className="text-3xl">Total Items: {enroll.length}</h3>
-            <h3 className="text-3xl">Total Price: ${total}</h3> */}
-
-
             <div className="w-full">
                 <Helmet>
                     <title>Academy | My enroll</title>
                 </Helmet>
                 <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
                     <h3 className="text-3xl">Selected Classes</h3>
+                    {/* <h3 className="text-3xl">Total Items: {total}</h3> */}
                     {/* <h3 className="text-3xl">Total Items: {enroll.length}</h3>
                     <h3 className="text-3xl">Total Price: ${total}</h3>
                     <Link to="/dashboard/payment">
@@ -101,7 +91,7 @@ const Profile = () => {
                                     <td>${item.price}</td>
                                     <td>
                                         <button onClick={() => handleDelete(item)} className="btn btn-danger btn-sm bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>
-                                        {/* <button className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button> */}
+                                        
                                     </td>
                                     <td>
                                         <Link to="/dashboard/payment">

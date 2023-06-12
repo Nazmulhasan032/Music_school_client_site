@@ -7,7 +7,7 @@ import ErrorPage from "../Layout/ErrorPage/Errorpage";
 // import Instructor from "../Pages/Instructor/Instructors";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
-import Classes from "../Pages/Home/Home/Classes/Classes";
+// import Classes from "../Pages/Home/Home/Classes/Classes";
 import PrivateRoute from "./PrivateRoute";
 // import DashBoard from "../Pages/DashBoard/Profile";
 import Instructors from "../Pages/Instructor/Instructors";
@@ -18,6 +18,7 @@ import AllClass from "../Pages/Home/AllClass/AllClass";
 import AddClass from "../Pages/DashBoard/AddClass/AddClass";
 import ManageClass from "../Pages/DashBoard/ManageClass/ManageClass";
 import ManageInstructor from "../Layout/ManageInstructor/ManageInstructor";
+import Payment from "../Pages/DashBoard/Payment/Payment";
 
   export const router = createBrowserRouter([
     {
@@ -54,6 +55,10 @@ import ManageInstructor from "../Layout/ManageInstructor/ManageInstructor";
         {
           path: 'profile',
           element: <Profile></Profile>,
+        },
+        {
+          path: 'payment',
+          element: <Payment></Payment>,
         },
         {
           path: 'allusers',

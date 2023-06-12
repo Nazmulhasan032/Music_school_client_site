@@ -23,7 +23,7 @@ const ManageClass = () => {
                 <Helmet>
                     <title>Academy | Manage Class</title>
                 </Helmet>
-                {/* <h3 className="text-3xl font-semibold my-4">Total Users: {users.length}</h3> */}
+                <h2 className="text-3xl font-bold text-center mb-8">All Classes</h2>
                 <div className="overflow-x-auto">
                     <table className="table table-zebra w-full">
                         {/* head */}
@@ -44,9 +44,13 @@ const ManageClass = () => {
                                     <td>{item.name}</td>
                                     <td>{item.teacher}</td>
                                     <td>$ {item.price}</td>
-
                                     <td>{item.role === 'instructor' ? 'instructor' :
-                                        <button className="btn btn-ghost bg-orange-600  text-white">Update</button>
+                                        <select className="select select-bordered select-sm w-3/4 max-w-xs">
+                                            <option disabled selected>Status</option>
+                                            <option>Approved</option>
+                                            <option>Pending</option>
+                                            <option>Denied</option>
+                                        </select>
                                     }</td>
                                     <td><button className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
 

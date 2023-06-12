@@ -25,20 +25,26 @@ const Dashboard = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 h-full text-base-content">
 
+                        {/* {
+                            isInstructor && <>
+                            <li><NavLink to="/dashboard/addClass"><FaHome></FaHome> Add a class</NavLink></li>
+                                <li><NavLink to="/dashboard/totalStudent">Total Enroll student</NavLink></li>
+                                <li><NavLink to="/dashboard/manageClass">Manage all Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/feedback">Feedback</NavLink></li>
+                            </>
+                        } */}
 
                         {
                             isAdmin ? <>
-                                <li><NavLink to="/dashboard/home"><FaHome></FaHome> Admin Home</NavLink></li>
                                 <li><NavLink to="/dashboard/manageInstructor">Manage all Instructor</NavLink></li>
                                 <li><NavLink to="/dashboard/manageClass">Manage all Classes</NavLink></li>
                                 <li><NavLink to="/dashboard/addclass">Add new Class</NavLink></li>
                                 <li><NavLink to="/dashboard/allusers">All Users</NavLink></li>
 
                             </> : <>
-                                <li><NavLink to="/dashboard/home"><FaHome></FaHome> User Home</NavLink></li>
-                                <li><NavLink to="/dashboard/reservations"><FaCalendarAlt></FaCalendarAlt> Reservations</NavLink></li>
-                                <li><NavLink to="/dashboard/history"><FaWallet></FaWallet> Payment History</NavLink></li>
-                                <li><NavLink to="/dashboard/profile"><FaUsers></FaUsers> My Profile</NavLink></li>
+                                <li><NavLink to="/dashboard/enrollClass"> My Enroll Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/history">Payment History</NavLink></li>
+                                <li><NavLink to="/dashboard/profile">My Selected Classes</NavLink></li>
 
                             </>
                         }

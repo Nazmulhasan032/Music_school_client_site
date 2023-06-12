@@ -49,6 +49,7 @@ const AddClass = () => {
                     Academy | Add new class
                 </title>
             </Helmet>
+            <h2 className="text-3xl font-bold text-center mb-8">Add New Classes</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-control">
                     <label className="label">
