@@ -1,7 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
-// import { useLoaderData } from 'react-router-dom';
 
 const Classes = () => {
 
@@ -20,9 +17,7 @@ const Classes = () => {
 
     return (
         <>
-            {/* <Helmet>
-                <title>Academy | Classes</title>
-            </Helmet> */}
+            
             <div className="text-center mt-16">
                 <h3 className="text-5xl font-bold my-4">Most Popular Classes</h3>
             </div>
@@ -40,9 +35,6 @@ const Classes = () => {
                 }
                 {/* card end */}
 
-            </div>
-            <div className="flex justify-center items-center">
-                <Link to='/classes'><button className='btn btn-primary'>Show More</button></Link>
             </div>
         </>
     );

@@ -42,9 +42,9 @@ const Instructor = () => {
                 }
                 {/* card end */}
             </div>
-            <div className="flex justify-center items-center">
+            {/* <div className="flex justify-center items-center">
                 <Link to='/instructor'><button className='btn btn-primary'>Show More</button></Link>
-            </div>
+            </div> */}
         </>
     );
 };
